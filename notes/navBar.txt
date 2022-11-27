@@ -1,0 +1,47 @@
+NAVBAR 
+Go to Navbar.jsx 
+
+import Hooks i.e import {useState} from 'react' //we have removed react and added {useState}
+add 
+import {close, logo, menu } from '../assets';
+import { navLinks } from '../constants' //to check what these are, hover and ctrl + click 
+//navLinks is an array contraining a list of objects that have the id and the title
+
+make a nav,     <nav className='w-full flex py-6 justify-between items-center navbar'>
+<img src={logo} />
+add alt and class, alt="hoobank" className='w-[124px] h-[32px]'
+
+for the list 
+<ul className='list-none sm:flex hidden justify-end items-center flex-1'>
+
+
+
+
+
+we are going to create a new list only for mobile devices
+below ul, we create a new div element
+<div className='sm:hidden flex flex-1 items-center'>
+then add a menu image, where we can click it to expand the menu
+
+its gonna depend, do we wanna open or close the menu, for that we can create a new use state
+go under const Navbar = () => { and create it
+const [toggle, setToggle] = useState(false)
+at the start its going to be set to false
+
+go back to image under div
+<img src={toggle ? close : menu } />
+if the toggle is turned on, then we want to show a close icon, otherwise we want to show a menu icon
+once we click it we wanna change the toggle
+
+if you wanna change the state using the previous version of that state, then you need to create a callback function that looks like this
+onClick={() => setToggle((prev) => !prev) }/>
+so we have setToggle and then you call it prev and then you say not prev, this makes sure react keeps the state up to date
+
+inside this div but below this image, lets create a div thats going to serve as our menu
+give it a class, it's going to be dynamic so we wanna check, if toogle is turned on then it's going to be a flex container, if it's not turned on then it's going to be hidden
+<div className={`${toggle ? 'flex' : 'hidden'}`}>,  then add some other classes
+
+now we are going to create a new ul, and this ul will be the same as for the large screen, so copy and paste
+remove sm in the class because we don't have to use it on small screen
+we wanna make it show in a column so we can say flex-col
+in the li, change mr-10 to mb-4 to make them aligned

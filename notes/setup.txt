@@ -1,0 +1,87 @@
+start with npm create vite@latest
+//instead of create react app
+run:  npm run dev
+then because we want to use tailwind, check documentation how to do it 
+https://tailwindcss.com/docs/guides/create-react-app
+
+run: npm install -D tailwindcss postcss autoprefixer
+run:npx tailwindcss init -p    //this creates our config files, lets set them up
+
+paste tailwind.config.cjs code from github
+paste index.css code from github
+delete all code on App.jsx 
+type rafce 
+delete app.css and assets folder
+
+make new folder in src, name it constants, new file index.js  this is where all the static texts will be
+i.e the titles, descriptions, some lists etc, we wanna have have predone lists of links so we can simply map through them
+and not spend time time writing it all by hand, paste the index js code here
+
+
+
+
+STRUCTuRE AND LAYOUT
+
+on App.jsx, add div and classname, remove the return and calibraces to make it look cleaner i.e 
+const App = () =>  (
+    <div className='bg-primary w-full overflow-hidden'>
+      <h1>Hello Tommy</h1>
+    </div>
+)
+
+Now we make our navbar section, import style.js from github put it in src
+
+code for our navbar:
+<div className={`${styles.paddingX} ${styles.flexCenter}`}> 
+      <div className={`${styles.boxWidth}`}>
+          Navbar
+      </div>
+      </div>
+
+Now we go to hero
+under navbar add 
+  <div className={`bg-primary ${styles.flexStart} `}>
+    <div className= {`${styles.boxWidth}`}>
+      Hero
+    </div>
+  </div>
+
+  under it add
+   <div className={`bg-primary ${styles.paddingX} ${styles.flexStart} `}>
+    <div className= {`${styles.boxWidth}`}>
+      Stats
+      Business
+      Billing
+      CardDeal
+      Testimonials
+      Clients 
+      CTA 
+      Footer 
+    </div>
+  </div>
+
+  Make new folder components in src, make new file Billing.jsx, type rafce
+  repeat all that and make files for all the component we will be using
+
+to import them to app.jsx , instead of using import Navbar from './components/Navbar' for all of them,
+make a new index.js file to import all of them i.e
+import Navbar from "./Navbar";
+import Billing from "./Billing";
+import CardDeal from "./CardDeal";
+ 
+ 
+ then export them all below
+i.e 
+export {
+  Navbar,Billing,CardDeal,Business,Clients,CTA, Stats,Footer,Testimonials,Hero,
+};
+
+then on app.jsx, import them all i.e 
+import { Billing, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Testimonials, Hero } from "./components";
+
+lets transform the text elements into the actual components i.e make them look   <Stats />
+      <Business />
+      <Billing />
+      <CardDeal />
+all of them
+
