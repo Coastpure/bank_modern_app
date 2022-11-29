@@ -1,0 +1,15 @@
+go to hero.jsx 
+we remove the return statement because we won't need it because we are going to return our jsx instantly
+instead of rendering a div, we aree going to render a section of id home, and give it a dynamic classname i.e className={``}>
+import some styles 
+import styles from '../style'
+import { discount, robot } from "../assets";
+
+how to add a space Discount For {" "}
+
+to make space between words work, aligne them with the span i.e 
+<span className="text-white">20%</span> Discount For {" "}
+<span className="text-white">1 Month</span> Account
+
+49:00
+
