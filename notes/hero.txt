@@ -5,11 +5,16 @@ import some styles
 import styles from '../style'
 import { discount, robot } from "../assets";
 
-how to add a space Discount For {" "}
+how to add a space after a span{" "}
 
-to make space between words work, aligne them with the span i.e 
+to make space between words work, align them with the span i.e 
 <span className="text-white">20%</span> Discount For {" "}
 <span className="text-white">1 Month</span> Account
 
-49:00
+dynamic class name is written as 
+className={`${styles.flexCenter}, it comes from the style.js file and in this case it is defined in the style file as const styles = { flexCenter: "flex justify-center items-center"};
+
+58:00
+
+
 
