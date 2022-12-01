@@ -14,7 +14,18 @@ to make space between words work, align them with the span i.e
 dynamic class name is written as 
 className={`${styles.flexCenter}, it comes from the style.js file and in this case it is defined in the style file as const styles = { flexCenter: "flex justify-center items-center"};
 
-58:00
+relative z-[5] to make the robot image appear above the gradient
+
+we can add the gradient by a series of self closing divs
+
+
+to make get started appear on mobile devices below, make a new div for it 
+ <div className={`ss:hidden ${styles.flexCenter}`}>
+        <GetStarted />
+</div>
+ss means it will usually be hidden, then it will show on small screens
+
+1:05:00
 
 
 
