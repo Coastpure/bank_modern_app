@@ -1,0 +1,10 @@
+first import 
+import {stats} from '../constants';
+import styles from '../style';
+{stats} is an array of 3 objects, each with title, id and value
+
+remember to remove return as we will be returning our jsx immediately
+
+sm:mb-20 mb-6 means on small devices it will be mb-20 and usually it will be mb-6
+
+002:

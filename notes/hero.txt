@@ -25,7 +25,6 @@ to make get started appear on mobile devices below, make a new div for it
 </div>
 ss means it will usually be hidden, then it will show on small screens
 
-1:05:00
 
 
 
