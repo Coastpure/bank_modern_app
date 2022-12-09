@@ -1,0 +1,123 @@
+start by importing 
+
+import {features} from '../constants';
+
+that will import the words we wanna use, located at constants > index.js i.e 
+it's going to be an array of different cards
+
+export const features = [
+  {
+    id: "feature-1",
+    icon: star,
+    title: "Rewards",
+    content:
+      "The best credit cards offer some tantalizing combinations of promotions and prizes",
+  },
+
+
+  import styles, {layout} from'../style';
+
+  it contains some other styles for the section,sectionReverse etc, and if you look at the layout it's simply some additional classNames
+  instead of saying flex md:flex-row flex-col ${styles.paddingY in the div clasName 
+  we can simply say section and save lot of time
+
+
+import Button from './Button';
+
+
+  the button is a component so import it in business div <Button /> 
+  then give a margin top of 10 to move down <Button styles="mt-10"/>
+
+  then go to its page to make it 
+  to this button we've passed a prop called styles, so we can get that immediately i.e 
+  const Button = ( { styles} ) => {
+
+then now make it a button component 
+<button type='button'> 
+
+to make the mt-10 work from <Button styles="mt-10"/>
+we pass in the prop at const Button = ({ styles }) => {
+then in the button className which is dynamic, call it using ${styles} 
+
+for the right side we are going to make a <FeatureCard /> component to make it reusable 
+because this component will only be used on this page we can create it above const Business 
+
+const FeatureCard = () => (
+  <div className=""></div>
+)
+
+lets see which props we will need, 
+lets first provide a key since we are mapping over it 
+<FeatureCard key={feature.id}/>
+and then let's spread the feature properties
+<FeatureCard key={feature.id} {...feature}/>
+that way it's going to contain all the features that are inside of our feature object
+and we can give it an index 
+<FeatureCard key={feature.id} {...feature} index={index}/>
+
+when you look at features, we have 
+export const features = [
+  {
+    id: "feature-1",
+    icon: star,
+    title: "Rewards",
+    content:
+      "The best credit cards offer some tantalizing combinations of promotions and prizes",
+},
+
+let's destructure those from props like this 
+const FeatureCard = (icon, title, content, index ) => ( 
+
+
+so at the top it's 
+const FeatureCard = ({icon, title, content, index }) => (
+  <div> 
+    <div>
+      <img src={icon} alt="icon" />
+    </div>
+  </div>
+)
+
+and at the bottom will be 
+
+ {features.map((feature, index) => (
+   <FeatureCard key={feature.id} {...feature} index={index}/>
+  ))}
+
+you should now see 3 icons show up 
+
+
+which means we created a reusable component that we are now mapping over
+
+
+to make padding appear on the bottom of each card but not the last one, add 
+${index !== features.length - 1 ? "mb-6" : "mb-0"} inside the className
+
+this class is what added the hovering effect feature-card
+
+so the first div looks like 
+ <div className={`flex flex-row p-6 rounded-[20px] ${index !== features.length - 1 ? "mb-6" : "mb-0"} feature-card`}> 
+
+ to put a circle around the icon put a classNmae of 
+ className={`w-[64px] h-[64px] rounded-full ${styles.flexCenter} bg-dimBlue `}
+
+
+ now let's add the text
+ under the image div, make a new div 
+ for the title first, it will be 
+  <div className="flex-1 flex flex-col ml-3"></div>
+      <h4>
+        {title}
+      </h4>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
