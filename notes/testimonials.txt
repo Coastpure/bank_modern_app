@@ -1,0 +1,10 @@
+to map oour cards we are gonna start with 
+
+ {feedback.map((card) => () )}
+
+ and we are going to return that feedback card component
+
+ <FeedbackCard />
+ it is a self closing component witha key of {card.id} and we are gong to spread properties of the card {...card}
+
+ 1:45:00
