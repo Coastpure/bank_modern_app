@@ -7,4 +7,4 @@ to map oour cards we are gonna start with
  <FeedbackCard />
  it is a self closing component witha key of {card.id} and we are gong to spread properties of the card {...card}
 
- 1:45:00
+Finished 4/01/2023 12:00PM
